@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Roboto } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import "./globals.css";
 
-const roboto = Roboto({
-  weight: ['300', '900'],
+const manrope = Manrope({
+  weight: ['300', '800'],
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
-  variable: '--font-roboto-serif',
+  variable: '--font-manrope',
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} ${roboto.className} antialiased`}
+        className={`${manrope.className} ${manrope.className} antialiased`}
       >
         {children}
       </body>

@@ -1,46 +1,51 @@
+import Link from "next/link";
+import asset from "../content/static";
+
 export default function Footer() {
+  const {navItems} = asset;
+
+  const contactInfo = [
+    {
+      type: "email",
+      value: "email@gmail.com",
+      link: "mailto:email@gmail.com",
+    },
+    {
+      type: "instagram",
+      value: "@toys_shop",
+      link: "https://instagram.com/toys_shop",
+    },
+  ];
+
   return (
-    <div className="container mx-auto py-8 text-center">
-      <ul className="flex justify-center gap-8">
-        <li>
-          <a href="#" className="text-gray-600 hover:text-gray-900">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#" className="text-gray-600 hover:text-gray-900">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#" className="text-gray-600 hover:text-gray-900">
-            Gallery
-          </a>
-        </li>
-         <li>
-          <a href="#" className="text-gray-600 hover:text-gray-900">
-            Contact
-          </a>
-        </li>
-      </ul>
-      <ul className="flex justify-center gap-8 mt-4">
-        <li>
-          <a
-            href="mailto:email@gmail.com"
-            className="text-gray-600 hover:text-gray-900"
-          >
-            email@gmail.com
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://instagram.com/toys_shop"
-            className="text-gray-600 hover:text-gray-900"
-          >
-            instagram: @toys_shop
-          </a>
-        </li>
-      </ul>
-    </div>
+    <footer id="footer" className="bg-[#f5e4dc]">
+      <div className="container mx-auto py-8 text-center">
+        <ul className="flex justify-center gap-8">
+          {navItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                href={item.href}
+                className="text-gray-600 hover:text-gray-900 font-medium"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex justify-center gap-8 mt-4">
+          {contactInfo.map((info, index) => (
+            <li key={index}>
+              <Link
+                href={info.link}
+                className="text-gray-600 hover:text-gray-900"
+                title={info.type}
+              >
+                {info.value}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </footer>
   );
 }
