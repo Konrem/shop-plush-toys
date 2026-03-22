@@ -1,13 +1,13 @@
   const contacts = [
     {
-      title: "email",
+      title: "test email",
       value: "email@gmail.com",
       link: "mailto:email@gmail.com",
     },
     {
       title: "instagram",
-      value: "@toys_shop",
-      link: "https://instagram.com/toys_shop",
+      value: "@felt-hand-toys",
+      link: "https://instagram.com/felt-hand-toys",
     },
   ];
 

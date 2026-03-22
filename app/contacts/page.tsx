@@ -9,8 +9,8 @@ export default function QRCode() {
   const { Image } = useQRCode();
   const ourSite = {
     title: "Наш сайт",
-    value: "toys_shop.netlify.app",
-    link: "https://toys_shop.netlify.app/",
+    value: "felt-hand-toys.netlify.app",
+    link: "https://felt-hand-toys.netlify.app/",
   };
   const contantInfo = [ourSite, ...contacts];
 
