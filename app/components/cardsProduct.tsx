@@ -24,7 +24,7 @@ export default function CardProduct({ products }: { products: Product[] }) {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
       {products.map((product, index) => (
-        <Link href={`/products/${product.toy}`} key={index}>
+        <Link href={`/products/${product.toy}`} key={index} className="hover:scale-115 transition-all duration-500">
           <div className="bg-white border-2 border-white rounded-3xl overflow-hidden">
             <div className="bg-[#F5E4DC] rounded-t-3xl">
               <Image

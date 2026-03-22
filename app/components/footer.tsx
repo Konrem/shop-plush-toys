@@ -1,21 +1,11 @@
 import Link from "next/link";
 import asset from "../content/static";
+import contacts from "../content/contacts";
 
 export default function Footer() {
   const {navItems} = asset;
 
-  const contactInfo = [
-    {
-      type: "email",
-      value: "email@gmail.com",
-      link: "mailto:email@gmail.com",
-    },
-    {
-      type: "instagram",
-      value: "@toys_shop",
-      link: "https://instagram.com/toys_shop",
-    },
-  ];
+  const contactInfo = contacts;
 
   return (
     <footer id="footer" className="bg-[#f5e4dc]">
@@ -38,7 +28,7 @@ export default function Footer() {
               <Link
                 href={info.link}
                 className="text-gray-600 hover:text-gray-900"
-                title={info.type}
+                title={info.title}
               >
                 {info.value}
               </Link>
