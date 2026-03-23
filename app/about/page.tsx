@@ -12,7 +12,9 @@ export default function About() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-4">{title}</h2>
           <p className="text-base whitespace-pre-wrap">{text}</p>
-          <p className="text-base whitespace-pre-wrap italic mt-8">{afterMain}</p>
+          <p className="text-base whitespace-pre-wrap italic mt-8">
+            {afterMain}
+          </p>
         </div>
         <Articles />
       </div>

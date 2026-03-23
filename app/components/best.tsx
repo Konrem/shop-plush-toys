@@ -8,7 +8,7 @@ import asset from "../content/static";
 export default function Best() {
   const bestProducts = toys.sort((a, b) => b.rating - a.rating).slice(0, 5);
 
-  const {viewAll} = asset;
+  const { viewAll } = asset;
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function Best() {
             href="#"
             className="py-2 px-4 border-2 text-white border-white rounded-full bg-[#BF8B70] shadow-xl hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-500"
           >
-           {viewAll}
+            {viewAll}
           </Link>
         </div>
       </div>

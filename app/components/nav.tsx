@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import asset from "../content/static";
+import NavBtn from "./btnNav";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -41,25 +42,23 @@ export default function Nav() {
                   className={`relative group flex justify-center flex-col ${item.dropdown ? "flex-[2_1_auto] md:flex-none" : "flex-auto"} `}
                   key={index}
                 >
-                  <Link
-                    href={item.href}
-                    className={`text-gray-600 hover:text-gray-900 group text-center font-bold md:font-medium text-3xl md:text-base py-1 transition-all duration-400  ${item.dropdown ? "hidden md:inline-block after:content-['>'] after:inline-block after:rotate-90 after:ml-1 md:pl-2" : "inline-block md:px-2"}`}
-                  >
-                    {item.name}
-                  </Link>
-                  <span className={`block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-900 ${item.dropdown ? "hidden" : ""}`}></span>
+                  <NavBtn
+                    link={item.link}
+                    name={item.name}
+                    dropdown={!!item.dropdown}
+                    footer={false}
+                    key={index}
+                  />
                   {item.dropdown ? (
                     <div className="static flex flex-col flex-1 justify-between md:absolute left-0 top-8 mt-0 md:hidden md:group-hover:block px-10 bg-transpatent md:bg-[#f5e4dc] z-65">
                       {item.dropdown.map((dropdown, index) => (
-                        <div className="flex justify-center" key={index}>
-                          <Link
-                            href={dropdown.href}
-                            className="group/dropdown block text-gray-600 hover:text-gray-900 text-center text-3xl md:text-base font-bold md:font-medium p-2 transition-all duration-400"
-                          >
-                            {dropdown.name}
-                            <span className="block max-w-0 group-hover/dropdown:max-w-full transition-all duration-500 h-0.5 bg-gray-900"></span>
-                          </Link>
-                        </div>
+                        <NavBtn
+                          link={dropdown.link}
+                          name={dropdown.name}
+                          dropdown={!item.dropdown}
+                          footer={false}
+                          key={index}
+                        />
                       ))}
                     </div>
                   ) : (

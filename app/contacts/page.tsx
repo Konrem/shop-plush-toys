@@ -4,6 +4,8 @@ import { useQRCode } from "next-qrcode";
 import Link from "next/link";
 import contacts from "../content/contacts";
 import Nav from "../components/nav";
+import TitleH2 from "../components/titleH2";
+import asset from "../content/static";
 
 export default function QRCode() {
   const { Image } = useQRCode();
@@ -14,13 +16,13 @@ export default function QRCode() {
   };
   const contantInfo = [ourSite, ...contacts];
 
+  const { titleContacts } = asset;
+
   return (
     <>
-     <Nav />
-      <div className="container mx-auto min-h-[100vh] content-center"> 
-        <h2 className="text-3xl font-bold text-center my-8">
-          Наші контакти і швидкий доступ через QR-коди
-        </h2>
+      <Nav />
+      <div className="container mx-auto min-h-[100vh] content-center py-8">
+        <TitleH2 text={titleContacts} />
         <div className="grid grid-cols-1 md:grid-cols-3 ">
           {contantInfo.map((contact, index) => (
             <div className="flex items-center justify-center" key={index}>

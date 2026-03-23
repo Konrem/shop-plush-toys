@@ -8,28 +8,10 @@ import MainTitle from "./components/mainTitle";
 import TitleBlock from "./components/titlebBlock";
 import TitleH2 from "./components/titleH2";
 import Articles from "./components/articles";
+import asset from "./content/static";
 
 export default function Home() {
-  const info = [
-    {
-      title: "Швидке та надійне доставлення!",
-      description:
-        "Виготовлення в терміни та доставлення через Нову пошту наші найкращі товари. Ми прагнемо якнайкращу доставку іграшок до вас.",
-      image: "/delivery.svg",
-    },
-    {
-      title: "Безпечний матеріал та якість!",
-      description:
-        "Ми використовуємо лише якісні та безпечні матеріали. Кожна іграшка проходить перевірку, щоб відповідати високим стандартам безпеки.",
-      image: "/quality.svg",
-    },
-    {
-      title: "Робота з повагою!",
-      description:
-        "Ми цінуємо клієнтів і завжди готові допомогти. Робимо все можливе, щоб забезпечити найкращий сервіс і задовольнити ваші потреби.",
-      image: "/service.svg",
-    },
-  ];
+  const {info} = asset;
 
   const reviews = [
     {

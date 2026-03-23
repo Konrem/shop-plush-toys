@@ -19,7 +19,7 @@ export default async function ToyPage({
   const imagesGallery = [product.mainImage, ...product.images];
 
   const warning = asset.warning;
-   const characteristics = asset.product;
+  const characteristics = asset.product;
 
   return (
     <div className="flex flex-col min-h-[100vh] bg-[#F7F2EC]">
@@ -33,7 +33,7 @@ export default async function ToyPage({
           <p className="text-base mt-2">
             {product.availability ? (
               <span className="font-bold text-green-500 mr-2">
-               {characteristics.isAvailability}
+                {characteristics.isAvailability}
               </span>
             ) : (
               <span className="font-bold text-red-500 mr-2">
@@ -46,7 +46,9 @@ export default async function ToyPage({
             {product.price}
           </p>
           <p className="text-base mt-2">
-            <span className="font-bold mr-2">{characteristics.description}</span>
+            <span className="font-bold mr-2">
+              {characteristics.description}
+            </span>
             {product.description}
           </p>
           <p className="text-base mt-2">
@@ -58,7 +60,8 @@ export default async function ToyPage({
             {product.material}
           </p>
           <p className="text-base mt-2">
-            <span className="font-bold mr-2">{characteristics.craftingDate}
+            <span className="font-bold mr-2">
+              {characteristics.craftingDate}
             </span>
             {product.crafting}
           </p>

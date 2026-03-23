@@ -42,7 +42,9 @@ export default async function GroupPage({
             <p className="text-base whitespace-pre-wrap">
               {fullText.description}
             </p>
-            <hr className={`${index === array.length - 1 ? "hidden" : "my-4" }`} />
+            <hr
+              className={`${index === array.length - 1 ? "hidden" : "my-4"}`}
+            />
           </div>
         ))}
       </div>
